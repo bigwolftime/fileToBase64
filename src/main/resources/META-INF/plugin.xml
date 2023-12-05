@@ -1,18 +1,16 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.bigwolftime.filetobase64</id>
-    <name>fileToBase64 Template</name>
+    <id>com.github.bigwolftime.convert</id>
+    <name>FileToBase64</name>
     <vendor>bigwolftime</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
     <resource-bundle>messages.MyBundle</resource-bundle>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.bigwolftime.filetobase64.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-    </extensions>
-
-    <applicationListeners>
-        <listener class="com.github.bigwolftime.filetobase64.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
+    <actions>
+        <action id="FileToBase64ActionId" class="com.github.bigwolftime.convert.FileToBase64" text="Convert File to Base64" description="FileToBase64">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="first"/>
+        </action>
+    </actions>
 </idea-plugin>
