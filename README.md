@@ -4,6 +4,9 @@
 [![Version](https://img.shields.io/jetbrains/plugin/v/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
 
+An Idea plugin can convert files to base64 encoding format. The original purpose of writing this plugin is that when the
+remote server doesn't allow direct file uploads, it can br bypassed by means of base64 encoding and decoding.
+
 ## Template ToDo list
 - [x] Create a new [IntelliJ Platform Plugin Template][template] project.
 - [ ] Get familiar with the [template documentation][template].
@@ -36,6 +39,15 @@ To keep everything working, do not remove `<!-- ... -->` sections.
   Download the [latest release](https://github.com/bigwolftime/fileToBase64/releases/latest) and install it manually using
   <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
 
+And then
+
+On ProjectView > select a file > right-click on it, you can find two options: `Convert File To Base64`, and `Convert File To Base64 Then Decode`.
+
+What happens when you click the `Convert File To Base64` button? - obviously, the contents of the selected file are 
+stored in the clipboard as base64 encoded.
+
+So what does the `Convert File To Base64 Then Decode` option do? - In addition to the previous step, a new decode command
+will be executed, completable command like that: `echo '${yourBase64Content}' | base64 -d > /tmp/dec`.
 
 ---
 Plugin based on the [IntelliJ Platform Plugin Template][template].

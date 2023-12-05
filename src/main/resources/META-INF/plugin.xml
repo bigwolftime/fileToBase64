@@ -9,8 +9,14 @@
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <actions>
-        <action id="FileToBase64ActionId" class="com.github.bigwolftime.convert.FileToBase64" text="Convert File to Base64" description="FileToBase64">
-            <add-to-group group-id="ProjectViewPopupMenu" anchor="first"/>
+        <action id="FileToBase64ActionId" class="com.github.bigwolftime.convert.FileToBase64"
+                text="Convert File to Base64" description="FileToBase64 and set clipboard">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+        </action>
+
+        <action id="FileToBase64ThenDecodeActionId" class="com.github.bigwolftime.convert.FileToBase64ThenDecode"
+                text="Convert File to Base64 Then Decode" description="FileToBase64ThenDecode(command: echo '${base64Content}' | base64 -d > /tmp/dec) and set to clipboard">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
         </action>
     </actions>
 </idea-plugin>
