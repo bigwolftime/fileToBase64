@@ -1,15 +1,23 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.bigwolftime.filetobase641</id>
-    <name>fileToBase64-1</name>
+    <name>fileToBase64</name>
     <vendor>bigwolftime</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
     <resource-bundle>messages.MyBundle</resource-bundle>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.bigwolftime.filetobase641.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-        <postStartupActivity implementation="com.github.bigwolftime.filetobase641.startup.MyProjectActivity" />
-    </extensions>
+    <actions>
+        <action id="FileToBase64ActionId" class="com.github.bigwolftime.filetobase64.convert.FileToBase64"
+                text="Convert File to Base64" description="FileToBase64 and set clipboard">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+        </action>
+
+        <action id="FileToBase64ThenDecodeActionId" class="com.github.bigwolftime.filetobase64.FileToBase64ThenDecode"
+                text="Convert File to Base64 Then Decode" description="FileToBase64ThenDecode(command: echo '${base64Content}' | base64 -d > /tmp/dec) and set to clipboard">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+        </action>
+    </actions>
+
 </idea-plugin>

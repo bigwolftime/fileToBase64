@@ -1,6 +1,6 @@
 <!-- Keep a Changelog guide -> https://keepachangelog.com -->
 
-# fileToBase64-1 Changelog
+# fileToBase64 Changelog
 
 ## [Unreleased]
 ### Added
