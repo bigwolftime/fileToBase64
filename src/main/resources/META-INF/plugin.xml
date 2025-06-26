@@ -9,7 +9,7 @@
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <actions>
-        <action id="FileToBase64ActionId" class="com.github.bigwolftime.filetobase64.convert.FileToBase64"
+        <action id="FileToBase64ActionId" class="com.github.bigwolftime.filetobase64.FileToBase64"
                 text="Convert File to Base64" description="FileToBase64 and set clipboard">
             <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
         </action>
